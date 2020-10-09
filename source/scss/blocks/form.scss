@@ -29,40 +29,65 @@
   }
 }
 
-.form__field {
-  flex: none;
-  margin-right: 3rem;
+.form__input {
+  width: 100%;
+  height: 100%;
   padding: 0 5.6rem;
-  height: 6rem;
-  width: calc(100% - 21rem);
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
   line-height: 1.2;
   color: $c-dark;
+  outline: none;
   border: 0;
   border-radius: 3rem;
-  outline: none;
+  transform: translateX(100%);
+
+  .screen--game.active & {
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in-out;
+  }
 
   &:focus {
     border: 1px solid $c-purple;
   }
 
   @media (min-width: $stop-scaling) {
-    margin-right: 30px;
     padding: 0 56px;
-    height: 60px;
-    width: calc(100% - 210px);
     font-size: 24px;
     border-radius: 30px;
   }
 
   @media (orientation: portrait) {
-    margin-right: 1rem;
     padding: 0 2.5rem;
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    padding: 0 2.5rem;
+    font-size: 1.6rem;
+  }
+}
+
+.form__field {
+  flex: none;
+  margin-right: 3rem;
+  height: 6rem;
+  width: calc(100% - 21rem);
+  border-radius: 3rem;
+  overflow: hidden;
+
+  @media (min-width: $stop-scaling) {
+    margin-right: 30px;
+    height: 60px;
+    width: calc(100% - 210px);
+    border-radius: 30px;
+  }
+
+  @media (orientation: portrait) {
+    margin-right: 1rem;
     width: calc(100% - 5rem);
     height: 4rem;
-    font-size: 1.6rem;
   }
 
   @media (max-width: $tablet) and (orientation: landscape) {
@@ -71,10 +96,8 @@
 
   @media (max-width: $mobile) and (orientation: landscape) {
     margin-right: 1rem;
-    padding: 0 2.5rem;
     width: calc(100% - 5rem);
     height: 4rem;
-    font-size: 1.6rem;
   }
 }
 
