@@ -54,7 +54,7 @@
     border: 2px solid $c-light;
     z-index: -1;
     transform: translate(-50%, -50%) scale(0);
-    transition: transform 0.35s cubic-bezier(.26,.56,.58,1.31);
+    transition: transform 0.35s cubic-bezier(.26,.56,.58,1.31) 0.20s;
   }
 
   .loaded &::before {
